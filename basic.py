@@ -10,11 +10,15 @@ def index():
 
 @app.route("/hello")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "Hello, World!"
 
 
 @app.route("/data")
 def data():
-    if request.headers["Content-Type"] == "application/json":
+    print(request.get_json())
+    if (
+        request.headers.get("Content-Type") == "application/json"
+        and request.get_json().get("return_type") == "json"
+    ):
         return ["spam", "ham", "eggs", "bacon"]
     return "spam,ham,eggs,bacon"
