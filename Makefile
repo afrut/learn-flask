@@ -15,12 +15,14 @@ create_virtualenv:
 install_python_requirements:
 	@pip install -r requirements.txt
 
+# make run_app APP=basic_graphql
 APP=basic
 run_app:
 	@flask --app ${APP} run
 
+# make debug_app APP=basic_graphql
 debug_app:
 	@flask --app ${APP} run --debug
 
-issue_requests:
-	@python issue_requests.py
+test_basic:
+	@python test_basic.py

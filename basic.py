@@ -15,7 +15,6 @@ def hello_world():
 
 @app.route("/data")
 def data():
-    print(request.get_json())
     if (
         request.headers.get("Content-Type") == "application/json"
         and request.get_json().get("return_type") == "json"
