@@ -26,3 +26,6 @@ debug_app:
 
 test_basic:
 	@python test_basic.py
+
+test_basic_graphql:
+	@python test_basic_graphql.py
